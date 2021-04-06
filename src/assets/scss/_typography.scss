@@ -1,0 +1,18 @@
+body {
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 18px;
+}
+
+.container header{
+  text-transform: uppercase;
+  letter-spacing: 1rem;
+}
+
+.clear-completed button,
+.todo-input input{
+  font-family: 'Josefin Sans', sans-serif;
+}
+
+.todo-input input{
+  font-size: 16px;
+}
