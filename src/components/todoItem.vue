@@ -1,13 +1,13 @@
 <template lang="html">
-  <div class="todo">
+  <div v-bind:class="{'todo-completed': completed}" class="todo">
     <div class="todo-left">
-      <button class="todo-done-btn" type="button" name="button">
+      <button v-on:click="isCompleted" class="todo-done-btn" type="button" name="button">
         <span class="material-icons">done</span>
       </button>
-      <p class="todo-text">Jog around the park 3x</p>
+      <p class="todo-text"><slot>Jacks 3x to do something</slot></p>
     </div>
     <div class="todo-right">
-      <button class="todo-delete-btn" type="button" name="button">
+      <button v-on:click="deleteTodo()" class="todo-delete-btn" type="button" name="button">
         <span class="material-icons">clear</span>
       </button>
     </div>
@@ -16,7 +16,22 @@
 
 <script>
 export default {
-  
+  data: function(){
+    return {
+      completed: false,
+    }
+  },
+  methods: {
+    isCompleted: function(){
+      this.completed = !this.completed;
+    },
+    deleteTodo: function(){
+      console.log('this.todos --> ', this.$parent.todos);
+      // console.log(todos);
+      console.log(this.$vnode.key);
+      
+    }
+  }
 }
 </script>
 
