@@ -16,20 +16,20 @@
           </button>
         </header>
         <div class="todo-input">
-          <button class="todo-add-btn" type="button" name="button">
+          <button v-on:click="addNewTodo(newTodo)" class="todo-add-btn" type="button" name="button">
             <span class="material-icons">done</span>
           </button>
-          <input type="text" name="todo" value="" placeholder="Create a new todo...">
+          <input v-model="newTodo" v-on:keyup.enter="addNewTodo(newTodo)" type="text" name="todo" value="" placeholder="Create a new todo...">
         </div>
         <div class="todos-container">
           <div class="todos">
-            <todo-item></todo-item>
+            <todo-item v-for='todo in todos' v-bind:key="todo.id">{{ todo.text }}</todo-item>
             <div class="todo todo-completed">
               <div class="todo-left">
                 <button class="todo-done-btn" type="button" name="button">
                   <span class="material-icons">done</span>
                 </button>
-                <p class="todo-text">Jog around the park 3x</p>
+                <p class="todo-text">default fron non component</p>
               </div>
               <div class="todo-right">
                 <button class="todo-delete-btn" type="button" name="button">
@@ -66,13 +66,24 @@ export default {
   data: function () {
     return {
       hello: 'this is from Vue.js App component ^__^',
-      imgUrl: './dist/images/bg-desktop-dark.jpg'
+      imgUrl: './dist/images/bg-desktop-dark.jpg',
+      newTodo: '',
+      todos: [
+        { id: 0, text: 'Lorem ipsum doloer mis' },
+        { id: 1, text: 'i have to do many things' },
+        { id: 2, text: 'lololo' },
+      ]
     }
   },
   components: {
     'todo-item': todoItem
+  },
+  methods: {
+    addNewTodo: function(newTodo){
+      this.todos.push({ id: this.todos.length + 1, text: newTodo });
+      this.newTodo = '';
+    }
   }
-
 }
 </script>
 

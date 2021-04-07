@@ -15,6 +15,11 @@ module.exports = {
     publicPath: '',
     assetModuleFilename: './images/[name][ext][query]'
   },
+  devServer: {
+    contentBase: './',
+    watchContentBase: true,
+    writeToDisk: true,
+  },
   plugins: [
     new CleanWebpackPlugin(),
     new MiniCssExtractPlugin({
