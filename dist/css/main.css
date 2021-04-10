@@ -1,0 +1,225 @@
+@import url(https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;500;700&display=swap);
+html,
+body,
+h1,
+ul,
+p {
+  padding: 0;
+  margin: 0; }
+
+body {
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 18px; }
+
+.container header {
+  text-transform: uppercase;
+  letter-spacing: 1rem; }
+
+.clear-completed button,
+.todo-input input {
+  font-family: 'Josefin Sans', sans-serif; }
+
+.todo-input input {
+  font-size: 16px; }
+
+body {
+  box-sizing: border-box; }
+
+.container-fluid {
+  width: 100%;
+  height: 100vh; }
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+  margin-bottom: 0.5rem; }
+
+.attribution a {
+  color: #3e52a3; }
+
+.bg-upper {
+  height: fit-content;
+  width: 100%; }
+  .bg-upper img {
+    max-width: 100%; }
+
+.bg-bottom {
+  min-height: calc(100% - 280px);
+  height: 20rem;
+  max-height: 100%;
+  width: 100%;
+  background: #161722;
+  top: 280px; }
+
+.rlt {
+  position: relative; }
+
+.middle,
+.bg-upper,
+.bg-bottom {
+  position: absolute; }
+
+.middle {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center; }
+
+.bg-bottom {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  color: white; }
+
+.container {
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  margin: 3rem 0; }
+  .container header {
+    display: flex;
+    justify-content: space-between;
+    color: #ffffff;
+    margin: 1rem 0; }
+
+.theme-dark {
+  display: none; }
+
+.theme-btn {
+  border: none;
+  background: none;
+  cursor: pointer; }
+  .theme-btn .material-icons {
+    color: #ffffff; }
+
+.todo-add-btn,
+.todo-done-btn,
+.todo-delete-btn {
+  background: none;
+  border: 1px solid #4d5066;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  cursor: pointer;
+  position: relative; }
+  .todo-add-btn .material-icons,
+  .todo-done-btn .material-icons,
+  .todo-delete-btn .material-icons {
+    font-size: 20px;
+    color: #4d5066; }
+
+.todo-add-btn,
+.todo-done-btn {
+  margin-right: 1rem; }
+
+.todo-delete-btn {
+  border: none; }
+  .todo-delete-btn .material-icons {
+    font-size: 24px; }
+
+.todo-done-btn::before {
+  content: '';
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  position: absolute;
+  border: double 2px transparent;
+  border-radius: 50% !important;
+  border-image-slice: 1;
+  background-image: linear-gradient(#25273c, #25273c), radial-gradient(circle at top left, #57ddff, #c058f3);
+  background-origin: border-box;
+  background-clip: content-box, border-box;
+  transform: scaleX(0.0001);
+  transition: transform 250ms ease-in-out; }
+
+.todo-done-btn:hover::before {
+  transform: scaleX(1); }
+
+.todo-input {
+  padding: 1rem;
+  background-color: #25273c;
+  border-radius: 0.5rem;
+  display: flex;
+  margin: 1.5rem 0; }
+  .todo-input input {
+    padding: 0.5rem;
+    width: 90%;
+    border: none;
+    background: transparent;
+    color: #ffffff; }
+  .todo-input input::placeholder {
+    color: #777a92; }
+
+.todos-container {
+  border-radius: 0.5rem;
+  background-color: #25273c; }
+  .todos-container .todos {
+    overflow: auto;
+    max-height: 50vh; }
+  .todos-container .todo {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
+    border-bottom: 1px solid #4d5066;
+    color: #cacde8;
+    font-size: 16px; }
+  .todos-container .todo-left {
+    display: flex;
+    align-items: center; }
+
+.todos-footer {
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between; }
+
+.count-uncompleted,
+.todo-nav ul,
+.clear-completed button {
+  color: #777a92;
+  font-size: 14px; }
+
+.todo-nav ul li:hover,
+.clear-completed button:hover {
+  color: #e4e5f1; }
+
+.todo-nav ul,
+.clear-completed button {
+  cursor: pointer; }
+
+.todo-nav ul {
+  list-style: none;
+  display: flex; }
+  .todo-nav ul li {
+    margin-right: 1rem; }
+  .todo-nav ul li:last-child {
+    margin-right: 0; }
+
+.active-nav {
+  color: #3a7bfd; }
+
+.clear-completed button {
+  background: none;
+  border: none; }
+
+.theme-btn:focus,
+.todo-add-btn:focus,
+.todo-done-btn:focus,
+.todo-delete-btn:focus,
+.clear-completed button:focus,
+.todo-input:focus {
+  outline: none; }
+
+.todo-completed .todo-done-btn {
+  background: linear-gradient(to bottom right, #57ddff, #c058f3); }
+  .todo-completed .todo-done-btn span {
+    color: #ffffff; }
+
+.todo-completed .todo-text {
+  color: #4d5066;
+  text-decoration: line-through; }
+
