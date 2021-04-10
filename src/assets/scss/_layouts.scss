@@ -9,24 +9,28 @@ body{
 
 .attribution {
   font-size: 11px; text-align: center;
+  margin-bottom: 0.5rem;
 }
 .attribution a {
   color: hsl(228, 45%, 44%);
 }
 .bg-upper{
-  height: 40vh;
+  height: fit-content;
   width: 100%;
-  background: aquamarine;
+  // background: aquamarine;
 
   img {
     max-width: 100%;
   }
 }
 .bg-bottom{
-  height: calc(100% - 40vh);
+  min-height: calc(100% - 280px);
+  height: 20rem;
+  max-height: 100%;
   width: 100%;
   background: $dt-vd-blue;
-  top: 40vh;
+  top: 280px;
+
 }
 .rlt{
   position: relative;
@@ -41,6 +45,12 @@ body{
   height: 100vh;
   display: flex;
   justify-content: center;
+}
+.bg-bottom{
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  color: white;
 }
 // ---------------- Main -----------------------
 .container{
@@ -148,6 +158,10 @@ body{
   border-radius: 0.5rem;
   background-color: $dt-vd-desaturated-blue;
 
+  .todos{
+    overflow: auto;
+    max-height: 50vh;
+  }
   .todo{
     display: flex;
     align-items: center;
