@@ -12,24 +12,24 @@ body{
   margin-bottom: 0.5rem;
 }
 .attribution a {
-  color: hsl(228, 45%, 44%);
+  // color: hsl(228, 45%, 44%);
 }
 .bg-upper{
   height: fit-content;
   width: 100%;
-  // background: aquamarine;
 
   img {
-    max-width: 100%;
+    width: 100%;
+    height: 16rem;
+    object-fit: cover;
   }
 }
 .bg-bottom{
-  min-height: calc(100% - 280px);
+  min-height: 59vh;
   height: 20rem;
   max-height: 100%;
   width: 100%;
-  background: $dt-vd-blue;
-  top: 280px;
+  top: 16rem;
 
 }
 .rlt{
@@ -66,9 +66,7 @@ body{
     margin: 1rem 0;
   }
 }
-.theme-dark{
-  display: none;
-}
+
 //------ Buttons ---------
 .theme-btn{
   border: none;
@@ -84,13 +82,14 @@ body{
 .todo-done-btn,
 .todo-delete-btn{
   background: none;
-  border: 1px solid $dt-vd-grayish-blue;
+  border: 1px solid;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   width: 2rem;
   height: 2rem;
+  min-width: 2rem;
   cursor: pointer;
   position: relative;
 
@@ -122,7 +121,7 @@ body{
   border: double 2px transparent;
   border-radius: 50% !important;
   border-image-slice: 1;
-  background-image: linear-gradient($dt-vd-desaturated-blue, $dt-vd-desaturated-blue),radial-gradient(circle at top left, hsl(192, 100%, 67%), hsl(280, 87%, 65%));
+  background-image: linear-gradient(transparent, transparent),radial-gradient(circle at top left, hsl(192, 100%, 67%), hsl(280, 87%, 65%));
   background-origin: border-box;
   background-clip: content-box, border-box;
   transform: scaleX(0.0001);
@@ -131,11 +130,14 @@ body{
 .todo-done-btn:hover::before{
   transform: scaleX(1);
 }
-
+.todo-done-btn:hover span{
+  display: flex !important;
+  color: $light;
+  z-index: 5;
+}
 // ----------- Input and todo ------------
 .todo-input{
   padding: 1rem;
-  background-color: $dt-vd-desaturated-blue;
   border-radius: 0.5rem;
   display: flex;
   margin: 1.5rem 0;
@@ -145,18 +147,12 @@ body{
     width: 90%;
     border: none;
     background: transparent;
-    color: $light;
-  }
-
-  input::placeholder{
-    color: $dt-d-grayish-blue;
   }
 }
 
 // ----------------Todos-----------------------
 .todos-container{
   border-radius: 0.5rem;
-  background-color: $dt-vd-desaturated-blue;
 
   .todos{
     overflow: auto;
@@ -167,34 +163,60 @@ body{
     align-items: center;
     justify-content: space-between;
     padding: 1rem;
-    border-bottom: 1px solid $dt-vd-grayish-blue;
-    color: $dt-l-grayish-blue;
+    border-bottom: 1px solid;
     font-size: 16px;
   }
-
+  .todo:first-child{
+    border-radius: 0.5rem 0.5rem 0 0;
+  }
   .todo-left{
     display: flex;
     align-items: center;
+  }
+  .todo .todo-right{
+    opacity: 0;
+    transition: opacity 500ms ease-in-out;
+  }
+  .todo:hover .todo-right{
+    opacity: 1;
   }
 }
 
 
 // -------------------Todos Footer---------------
 .todos-footer{
-  padding: 1rem;
   display: flex;
   justify-content: space-between;
+  position: relative;
+
+
+  .footer-details{
+    width: -webkit-fill-available;
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+    border-radius: 0rem 0rem 0.5rem 0.5rem;
+  }
+  .todo-nav{
+    position: absolute;
+    width: fit-content;
+    top: 38%;
+    bottom: 38%;
+    right: 35%;
+    left: 35%;
+  }
+  .count-uncompleted{
+    display: flex;
+    align-items: center;
+  }
 }
+
 
 .count-uncompleted,
 .todo-nav ul,
 .clear-completed button{
-  color: $dt-d-grayish-blue;
   font-size: 14px;
-}
-.todo-nav ul li:hover,
-.clear-completed button:hover{
-  color: $dt-l-grayish-blue-hover;
+  font-weight: 600;
 }
 
 .todo-nav ul,
@@ -238,16 +260,26 @@ body{
 }
 
 .todo-completed{
-  .todo-done-btn{
-    background: $primary-bg-gradient;
-
-    span{
-      color: $light;
-    }
-  }
   .todo-text{
-    color: $dt-vd-grayish-blue;
     text-decoration: line-through;
   }
+}
+/* width */
+::-webkit-scrollbar {
+  width: 5px;
+}
 
+/* Track */
+::-webkit-scrollbar-track {
+  background: $lt-vl-grayish-blue;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: $lt-d-grayish-blue;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: $lt-vd-grayish-blue;
 }

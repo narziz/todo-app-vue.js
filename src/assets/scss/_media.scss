@@ -1,0 +1,36 @@
+@media (min-width: 376px) and (max-width: 1024px) {
+  .bg-upper img{
+    // max-width: unset;
+  }
+}
+@media (max-width: 991px) {
+  .container{
+    width: 90%;
+  }
+  .bg-bottom{
+    min-height: 80vh;
+  }
+  .todos-footer{
+    flex-direction: column;
+  }
+  .todo-nav{
+    position: unset !important;
+    padding: 1rem;
+    margin-top: 1rem;
+    border-radius: 0.5rem;
+    display: flex;
+    justify-content: center;
+  }
+  .light-theme{
+    .todo-nav{
+      background-color: $lt-vl-gray;
+      width: -webkit-fill-available;
+    }
+  }
+  .dark-theme{
+    .todo-nav{
+      background-color: $dt-vd-desaturated-blue;
+      width: -webkit-fill-available;
+    }
+  }
+}

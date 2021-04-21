@@ -1,7 +1,12 @@
 <template lang="html">
   <footer class="todos-footer">
-    <div class="count-uncompleted">
-      <p>{{ uncompletedItems }} items left</p>
+    <div class="footer-details">
+      <div class="count-uncompleted">
+        <p>{{ uncompletedItems }} {{ uncompletedItems | pluralize }} left</p>
+      </div>
+      <div class="clear-completed">
+        <button v-on:click="clearCompleted" type="button" name="button">Clear Completed</button>
+      </div>
     </div>
     <div class="todo-nav">
       <ul>
@@ -11,9 +16,6 @@
           v-bind:key="item.key"
           v-bind:class='{"active-nav": visibility == item.key}'>{{ item.text }}</li>
       </ul>
-    </div>
-    <div class="clear-completed">
-      <button v-on:click="clearCompleted" type="button" name="button">Clear Completed</button>
     </div>
   </footer>
 </template>
@@ -64,7 +66,13 @@ export default {
       // this.todos = filters['active'](this.todos);
       this.$emit('update-todo', filters['active'](this.todos));
     },
-  }
+  },
+  filters: {
+    pluralize: function(num){
+      console.log(num);
+      return num == 1 ? 'item' : 'items';
+    }
+  },
 }
 </script>
 
