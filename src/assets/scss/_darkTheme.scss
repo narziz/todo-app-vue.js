@@ -1,0 +1,75 @@
+
+.dark-theme{
+
+  // background
+  .bg-bottom{
+    background-color: $dt-vd-blue;
+  }
+  // Buttons
+  .todo-add-btn,
+  .todo-done-btn,
+  .todo-delete-btn{
+    border-color: $dt-vd-grayish-blue;
+  }
+
+  // todos
+  .todo,
+  .todo-input{
+    background-color: $dt-vd-desaturated-blue;
+  }
+  .todo-input{
+    input{
+      color: $light;
+    }
+    input::placeholder{
+      color: $dt-d-grayish-blue;
+    }
+  }
+  .todo{
+    color: $dt-l-grayish-blue;
+    border-bottom-color: $dt-vd-grayish-blue;
+  }
+
+  // todo completed
+  .todo-completed{
+    .todo-done-btn{
+
+      background: $primary-bg-gradient;
+
+      span {
+        color: $light;
+      }
+    }
+
+    .todo-text{
+      color: $dt-vd-grayish-blue;
+      text-decoration: line-through;
+    }
+
+  }
+
+  // footer
+
+  .footer-details{
+    background-color: $dt-vd-desaturated-blue;
+  }
+
+  .count-uncompleted,
+  .todo-nav ul,
+  .clear-completed button{
+    color: $dt-d-grayish-blue;
+  }
+
+  .todo-nav ul li:hover,
+  .clear-completed button:hover{
+    color: $dt-l-grayish-blue-hover;
+  }
+
+  .attribution{
+    color: $dt-l-grayish-blue;
+
+    a {
+      color: $primary-blue;
+    }
+  }
+}

@@ -15,20 +15,20 @@ $primary-bg-gradient: linear-gradient(to bottom right, hsl(192, 100%, 67%), hsl(
 $light: #ffffff;
 
 // light theme colors
-$lt-vl-gray: hsl(0, 0%, 98%);
-$lt-vl-grayish-blue: hsl(236, 33%, 92%);
-$lt-l-grayish-blue: hsl(233, 11%, 84%);
-$lt-d-grayish-blue: hsl(236, 9%, 61%);
-$lt-vd-grayish-blue: hsl(235, 19%, 35%);
+$lt-vl-gray: hsl(0, 0%, 98%);                 // todo and input bg
+$lt-vl-grayish-blue: hsl(236, 33%, 92%);      // background and border
+$lt-l-grayish-blue: hsl(233, 11%, 84%);       // completed todos
+$lt-d-grayish-blue: hsl(236, 9%, 61%);        // footer nav color
+$lt-vd-grayish-blue: hsl(235, 19%, 35%);      // footer nav hover color
 
 // dark theme colors
-$dt-vd-blue: hsl(235, 21%, 11%);
-$dt-vd-desaturated-blue: hsl(235, 24%, 19%);
-$dt-l-grayish-blue: hsl(234, 39%, 85%);
-$dt-l-grayish-blue-hover: hsl(236, 33%, 92%);
-$dt-d-grayish-blue: hsl(234, 11%, 52%);
-$dt-vd-grayish-blue: hsl(233, 14%, 35%);
-$dt-vd-grayish-blue-hover: hsl(237, 14%, 26%);
+$dt-vd-blue: hsl(235, 21%, 11%);                // background
+$dt-vd-desaturated-blue: hsl(235, 24%, 19%);    // todo and input bg
+$dt-l-grayish-blue: hsl(234, 39%, 85%);         // todo text color
+$dt-l-grayish-blue-hover: hsl(236, 33%, 92%);   // footer nav hover color
+$dt-d-grayish-blue: hsl(234, 11%, 52%);         // footer nav color
+$dt-vd-grayish-blue: hsl(233, 14%, 35%);        // completed todo
+$dt-vd-grayish-blue-hover: hsl(237, 14%, 26%);  // todo border bottom \ completed border
 
 
 // ---- screens ----

@@ -1,4 +1,4 @@
-@import url(https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;500;700&display=swap);
+@import url(https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;500;600;700&display=swap);
 html,
 body,
 h1,
@@ -34,22 +34,20 @@ body {
   text-align: center;
   margin-bottom: 0.5rem; }
 
-.attribution a {
-  color: #3e52a3; }
-
 .bg-upper {
   height: fit-content;
   width: 100%; }
   .bg-upper img {
-    max-width: 100%; }
+    width: 100%;
+    height: 16rem;
+    object-fit: cover; }
 
 .bg-bottom {
-  min-height: calc(100% - 280px);
+  min-height: 59vh;
   height: 20rem;
   max-height: 100%;
   width: 100%;
-  background: #161722;
-  top: 280px; }
+  top: 16rem; }
 
 .rlt {
   position: relative; }
@@ -82,9 +80,6 @@ body {
     color: #ffffff;
     margin: 1rem 0; }
 
-.theme-dark {
-  display: none; }
-
 .theme-btn {
   border: none;
   background: none;
@@ -96,13 +91,14 @@ body {
 .todo-done-btn,
 .todo-delete-btn {
   background: none;
-  border: 1px solid #4d5066;
+  border: 1px solid;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   width: 2rem;
   height: 2rem;
+  min-width: 2rem;
   cursor: pointer;
   position: relative; }
   .todo-add-btn .material-icons,
@@ -130,7 +126,7 @@ body {
   border: double 2px transparent;
   border-radius: 50% !important;
   border-image-slice: 1;
-  background-image: linear-gradient(#25273c, #25273c), radial-gradient(circle at top left, #57ddff, #c058f3);
+  background-image: linear-gradient(transparent, transparent), radial-gradient(circle at top left, #57ddff, #c058f3);
   background-origin: border-box;
   background-clip: content-box, border-box;
   transform: scaleX(0.0001);
@@ -139,9 +135,13 @@ body {
 .todo-done-btn:hover::before {
   transform: scaleX(1); }
 
+.todo-done-btn:hover span {
+  display: flex !important;
+  color: #ffffff;
+  z-index: 5; }
+
 .todo-input {
   padding: 1rem;
-  background-color: #25273c;
   border-radius: 0.5rem;
   display: flex;
   margin: 1.5rem 0; }
@@ -149,14 +149,10 @@ body {
     padding: 0.5rem;
     width: 90%;
     border: none;
-    background: transparent;
-    color: #ffffff; }
-  .todo-input input::placeholder {
-    color: #777a92; }
+    background: transparent; }
 
 .todos-container {
-  border-radius: 0.5rem;
-  background-color: #25273c; }
+  border-radius: 0.5rem; }
   .todos-container .todos {
     overflow: auto;
     max-height: 50vh; }
@@ -165,27 +161,45 @@ body {
     align-items: center;
     justify-content: space-between;
     padding: 1rem;
-    border-bottom: 1px solid #4d5066;
-    color: #cacde8;
+    border-bottom: 1px solid;
     font-size: 16px; }
+  .todos-container .todo:first-child {
+    border-radius: 0.5rem 0.5rem 0 0; }
   .todos-container .todo-left {
     display: flex;
     align-items: center; }
+  .todos-container .todo .todo-right {
+    opacity: 0;
+    transition: opacity 500ms ease-in-out; }
+  .todos-container .todo:hover .todo-right {
+    opacity: 1; }
 
 .todos-footer {
-  padding: 1rem;
   display: flex;
-  justify-content: space-between; }
+  justify-content: space-between;
+  position: relative; }
+  .todos-footer .footer-details {
+    width: -webkit-fill-available;
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+    border-radius: 0rem 0rem 0.5rem 0.5rem; }
+  .todos-footer .todo-nav {
+    position: absolute;
+    width: fit-content;
+    top: 38%;
+    bottom: 38%;
+    right: 35%;
+    left: 35%; }
+  .todos-footer .count-uncompleted {
+    display: flex;
+    align-items: center; }
 
 .count-uncompleted,
 .todo-nav ul,
 .clear-completed button {
-  color: #777a92;
-  font-size: 14px; }
-
-.todo-nav ul li:hover,
-.clear-completed button:hover {
-  color: #e4e5f1; }
+  font-size: 14px;
+  font-weight: 600; }
 
 .todo-nav ul,
 .clear-completed button {
@@ -214,12 +228,139 @@ body {
 .todo-input:focus {
   outline: none; }
 
-.todo-completed .todo-done-btn {
+.todo-completed .todo-text {
+  text-decoration: line-through; }
+
+/* width */
+::-webkit-scrollbar {
+  width: 5px; }
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #e4e5f1; }
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #9394a5; }
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #484b6a; }
+
+.light-theme .bg-bottom {
+  background-color: #e4e5f1; }
+
+.light-theme .todo-add-btn,
+.light-theme .todo-done-btn,
+.light-theme .todo-delete-btn {
+  border-color: #e4e5f1; }
+
+.light-theme .todo,
+.light-theme .todo-input {
+  background-color: #fafafa; }
+
+.light-theme .todo-input input {
+  color: #484b6a; }
+
+.light-theme .todo-input input::placeholder {
+  color: #9394a5; }
+
+.light-theme .todo {
+  color: #484b6a;
+  border-bottom-color: #e4e5f1; }
+
+.light-theme .todo-completed .todo-done-btn {
   background: linear-gradient(to bottom right, #57ddff, #c058f3); }
-  .todo-completed .todo-done-btn span {
+  .light-theme .todo-completed .todo-done-btn span {
     color: #ffffff; }
 
-.todo-completed .todo-text {
+.light-theme .todo-completed .todo-text {
+  color: #d2d3db;
+  text-decoration: line-through; }
+
+.light-theme .footer-details {
+  background-color: #fafafa; }
+
+.light-theme .count-uncompleted,
+.light-theme .todo-nav ul,
+.light-theme .clear-completed button {
+  color: #9394a5; }
+
+.light-theme .todo-nav ul li:hover,
+.light-theme .clear-completed button:hover {
+  color: #484b6a; }
+
+.light-theme .attribution {
+  color: #484b6a; }
+  .light-theme .attribution a {
+    color: #3a7bfd; }
+
+.dark-theme .bg-bottom {
+  background-color: #161722; }
+
+.dark-theme .todo-add-btn,
+.dark-theme .todo-done-btn,
+.dark-theme .todo-delete-btn {
+  border-color: #4d5066; }
+
+.dark-theme .todo,
+.dark-theme .todo-input {
+  background-color: #25273c; }
+
+.dark-theme .todo-input input {
+  color: #ffffff; }
+
+.dark-theme .todo-input input::placeholder {
+  color: #777a92; }
+
+.dark-theme .todo {
+  color: #cacde8;
+  border-bottom-color: #4d5066; }
+
+.dark-theme .todo-completed .todo-done-btn {
+  background: linear-gradient(to bottom right, #57ddff, #c058f3); }
+  .dark-theme .todo-completed .todo-done-btn span {
+    color: #ffffff; }
+
+.dark-theme .todo-completed .todo-text {
   color: #4d5066;
   text-decoration: line-through; }
+
+.dark-theme .footer-details {
+  background-color: #25273c; }
+
+.dark-theme .count-uncompleted,
+.dark-theme .todo-nav ul,
+.dark-theme .clear-completed button {
+  color: #777a92; }
+
+.dark-theme .todo-nav ul li:hover,
+.dark-theme .clear-completed button:hover {
+  color: #e4e5f1; }
+
+.dark-theme .attribution {
+  color: #cacde8; }
+  .dark-theme .attribution a {
+    color: #3a7bfd; }
+
+@media (max-width: 991px) {
+  .container {
+    width: 90%; }
+  .bg-bottom {
+    min-height: 80vh; }
+  .todos-footer {
+    flex-direction: column; }
+  .todo-nav {
+    position: unset !important;
+    padding: 1rem;
+    margin-top: 1rem;
+    border-radius: 0.5rem;
+    display: flex;
+    justify-content: center; }
+  .light-theme .todo-nav {
+    background-color: #fafafa;
+    width: -webkit-fill-available; }
+  .dark-theme .todo-nav {
+    background-color: #25273c;
+    width: -webkit-fill-available; } }
 
