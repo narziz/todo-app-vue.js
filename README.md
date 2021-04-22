@@ -8,7 +8,7 @@ This Todo App created for freeCodeCamp challange.
 * [Webpack](https://webpack.js.org/concepts/) - An open-source JavaScript module bundler
 
 ## Preview
-To view site [Click Here](https://survey-form-taupe.vercel.app/)
+To view site [Click Here](https://narziz.github.io/todo-app-vue.js/)
 
 ## Getting Started
 
