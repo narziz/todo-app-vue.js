@@ -3,7 +3,7 @@
     <div class="bg-upper">
       <picture>
         <source media="(max-width:375px)" v-bind:srcset="showMobileImage">
-        <img v-bind:src="showImage">
+        <img v-bind:src="showImage" alt="background image">
       </picture>
     </div>
     <div class="bg-bottom">

@@ -3,7 +3,7 @@
     // max-width: unset;
   }
 }
-@media (max-width: 991px) {
+@media (max-width: 1024px) {
   .container{
     width: 90%;
   }
@@ -31,6 +31,13 @@
     .todo-nav{
       background-color: $dt-vd-desaturated-blue;
       width: -webkit-fill-available;
+    }
+  }
+}
+@media (min-width: 1025px) {
+  .todos-footer{
+    .footer-details{
+      width: 100%;
     }
   }
 }
