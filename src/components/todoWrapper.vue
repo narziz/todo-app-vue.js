@@ -55,7 +55,7 @@ export default {
       todos: [
         { id: 0, text: 'Lorem ipsum doloer mis', completed: false },
         { id: 1, text: 'i have to do many things', completed: false },
-        { id: 2, text: 'lololo', completed: false },
+        { id: 2, text: '3x jumpings', completed: false },
         { id: 3, text: 'this is my todo list', completed: true },
       ],
     }
@@ -77,15 +77,12 @@ export default {
       this.visibility = value;
     },
     updateTodo: function(value){
-      console.log('Value from parent --> ', value);
       this.todos = value;
     },
     addNewTodo: function(value){
-      console.log(this.todos);
       if (value.length > 0) {
         this.todos.unshift({ id: this.todos.length, text: value, completed: false });
       }
-      console.log('changed > ',this.todos);
     },
     changeTheme: function(value){
       this.currentTheme = value;

@@ -59,17 +59,13 @@ export default {
     activateNav: function(key){
       this.visibility = key;
       this.$emit('visible', this.visibility);
-      console.log('visibility --> ', this.visibility);
     },
     clearCompleted: function(){
-      console.log('this.todos --> ',this.todos);
-      // this.todos = filters['active'](this.todos);
       this.$emit('update-todo', filters['active'](this.todos));
     },
   },
   filters: {
     pluralize: function(num){
-      console.log(num);
       return num == 1 ? 'item' : 'items';
     }
   },

@@ -26,7 +26,6 @@ export default {
   methods: {
     changeTheme: function(value){
       this.theme = value;
-      console.log(value);
     }
   }
 }

@@ -12,7 +12,7 @@ To view site [Click Here](https://narziz.github.io/todo-app-vue.js/)
 
 ## Getting Started
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. 
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
 
 You'll need [Git](https://git-scm.com) and [Node.js](https://nodejs.org/en/download/) (which comes with [npm](http://npmjs.com)) and [yarn](https://yarnpkg.com/) installed on your computer.
 
@@ -45,6 +45,9 @@ Using npm:
 ```bash
 # Install dependencies
 $ yarn add
+
+# To build production version
+$ yarn build
 
 # To build development version
 $ yarn start

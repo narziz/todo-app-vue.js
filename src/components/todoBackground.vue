@@ -5,7 +5,6 @@
         <source media="(max-width:375px)" v-bind:srcset="showMobileImage">
         <img v-bind:src="showImage">
       </picture>
-      <!-- <img v-bind:src="showImage" alt=""> -->
     </div>
     <div class="bg-bottom">
       <div class="attribution">
@@ -20,25 +19,25 @@
 export default {
   data: function(){
     return {
-      imgUrl: './dist/images/bg-desktop-light.jpg',
-      mobileImgUrl: './dist/images/bg-mobile-light.jpg'
+      imgUrl: './images/bg-desktop-light.jpg',
+      mobileImgUrl: './images/bg-mobile-light.jpg'
     }
   },
   props: ['theme'],
   computed: {
     showImage: function(){
       if (this.theme == 'light-theme') {
-        this.imgUrl = './dist/images/bg-desktop-light.jpg';
+        this.imgUrl = './images/bg-desktop-light.jpg';
       } else {
-        this.imgUrl = './dist/images/bg-desktop-dark.jpg';
+        this.imgUrl = './images/bg-desktop-dark.jpg';
       }
       return this.imgUrl
     },
     showMobileImage: function(){
       if (this.theme == 'light-theme') {
-        this.mobileImgUrl = './dist/images/bg-mobile-light.jpg'
+        this.mobileImgUrl = './images/bg-mobile-light.jpg'
       } else {
-        this.mobileImgUrl = './dist/images/bg-mobile-dark.jpg'
+        this.mobileImgUrl = './images/bg-mobile-dark.jpg'
       }
       return this.mobileImgUrl
     }

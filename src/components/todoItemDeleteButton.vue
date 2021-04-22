@@ -10,7 +10,6 @@ export default {
     deleteTodo: function(){
       var key = this.$parent.$vnode.key;
       var todos = this.$parent.$parent.todos;
-      console.log(key);
 
       for(var i=0; i < todos.length; i++){
         if ( todos[i].id == key ) {

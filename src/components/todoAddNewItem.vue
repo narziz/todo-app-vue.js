@@ -15,7 +15,6 @@ export default {
   props: ['todos'],
   methods: {
     addNewTodo: function(newTodo){
-      // this.todos.push({ id: this.todos.length + 1, text: newTodo, completed: false });
       this.$emit('add-todo', newTodo);
       this.newTodo = '';
     },
